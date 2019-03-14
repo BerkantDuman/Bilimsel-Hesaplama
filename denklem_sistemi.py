@@ -1,4 +1,8 @@
-def yazdir (matrix, row, col):
+def yazdir (matrix):
+
+    row = len(matrix)
+    col = len(matrix[0])
+
     for i in range(row):
         print("\n")
         for j in range(col):
@@ -29,4 +33,4 @@ matrix_2 = [[1, 2, 1, 8], [2, -1, 1, 3], [3, 3, -2, 3]]
 matrix = [[1, 1, 2, 4], [2, -1, -1, 2], [1, 2, 3, 6]]
 matrix_3 = [[1, 1, -1, 1, 2], [0, 2, 1, -1, 5], [1, 0, -1, 1, 0], [-1, -1, 1, 0, -4]]
 
-yazdir(gauss_jordan_eleminasyon(matrix_3), 4, 5)
+yazdir(gauss_jordan_eleminasyon(matrix_3))
