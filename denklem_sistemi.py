@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 def yazdir (matrix):
 
     row = len(matrix)
@@ -8,8 +10,19 @@ def yazdir (matrix):
         for j in range(col):
             print(matrix[i][j], "|", end=" ")
 
-def gauss_jordan_eleminasyon(matrix):
+def create_matrix(equation, result):
 
+    liste = deepcopy(equation)
+
+    for i in range(len(liste)):
+        liste[i].append(result[i])
+
+    return liste
+
+def gauss_jordan_eleminasyon(equations, results):
+
+    matrix = create_matrix(equations, results)
+    
     for k in range(len(matrix)):
         for j in range(len(matrix)-1, k, -1):
             temp = matrix[j][k]
@@ -29,8 +42,10 @@ def gauss_jordan_eleminasyon(matrix):
 
     return matrix
 
-matrix_2 = [[1, 2, 1, 8], [2, -1, 1, 3], [3, 3, -2, 3]]
-matrix = [[1, 1, 2, 4], [2, -1, -1, 2], [1, 2, 3, 6]]
-matrix_3 = [[1, 1, -1, 1, 2], [0, 2, 1, -1, 5], [1, 0, -1, 1, 0], [-1, -1, 1, 0, -4]]
+#matrix_2 = [[1, 2, 1, 8], [2, -1, 1, 3], [3, 3, -2, 3]]
+#matrix = [[1, 1, 2, 4], [2, -1, -1, 2], [1, 2, 3, 6]]
 
-yazdir(gauss_jordan_eleminasyon(matrix_3))
+equation = [[1, 1, -1, 1], [0, 2, 1, -1], [1, 0, -1, 1], [-1, -1, 1, 0]]
+equation_result = [2, 5, 0, -4]
+
+yazdir(gauss_jordan_eleminasyon(equation, equation_result))
