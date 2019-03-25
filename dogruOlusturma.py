@@ -24,6 +24,6 @@ else:
             temp = x1
             x1 = xr
         if(abs(xr-temp) < delta):
-            print(xr)
+            print("Denklemin kökü=",xr)
             break
 
