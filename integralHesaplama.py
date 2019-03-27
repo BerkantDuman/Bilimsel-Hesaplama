@@ -3,8 +3,8 @@ def f(x):
 
 n = 10 #Aralık kaça bölünsün
 
-x1 = int(input("Alt sınır = "))
-x2 = int(input("Üst sınır = "))
+x1 = 4
+x2 = 6
 h = (x2-x1)/n
 
 #Kısa kenara göre integral
