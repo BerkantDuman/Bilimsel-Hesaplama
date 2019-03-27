@@ -4,7 +4,7 @@ def f(x):
 n = 10 #Aralık kaça bölünsün
 
 x1 = 4
-x2 = 6
+x2 = 7
 h = (x2-x1)/n
 
 #Kısa kenara göre integral
