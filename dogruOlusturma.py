@@ -5,6 +5,7 @@ x1 = int(input("Başlangıç tahminini giriniz: "))
 x2 = int(input("Bitiş tahminini giriniz: "))
 delta = 0.001
 temp = -100000
+counter = 0
 
 if(f(x1)*f(x2) == 0):
     print("Tahminlerden biri denklem kökü.")
@@ -12,10 +13,11 @@ elif(f(x1)*f(x2) > 0):
     print("Bu aralıkta tek sayida kök yok.")
 else:
   
-    while True:   
+    while True:
+        counter += 1   
         xr = (x2*f(x1) - x1*f(x2)) / (f(x1)-f(x2))
         if(f(xr) == 0):
-            print("denklemin kökü=",xr)
+            print("denklemin kökü=",xr,counter)
             break
         elif(f(x1)*f(xr) < 0):
             temp = x2
@@ -24,6 +26,6 @@ else:
             temp = x1
             x1 = xr
         if(abs(xr-temp) < delta):
-            print("Denklemin kökü=",xr)
+            print("Denklemin kökü=",xr,counter)
             break
 
